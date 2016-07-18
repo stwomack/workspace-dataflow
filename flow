@@ -1,0 +1,10 @@
+Flow
+
+http-in=http --port=9001 | splitter | filter --expression=payload.contains("error") | redis-pubsub --name=store-errors --key=auth-errors
+upper-spliter=:http-in.splitter > transform-upper: transform --expression=payload.toUpperCase() | upper-file: file --directory=/tmp --name=upper
+aggregate-counter-splitter=:http-in.splitter > aggregate-counter --name-expression=payload.status
+
+dataflow:>stream deploy http-in --properties “app.http.producer.partitionKeyExpression=payload.status,app.redis-pubsub.count=4”
+
+
+filter --expression='payload.userCpu > 50'
