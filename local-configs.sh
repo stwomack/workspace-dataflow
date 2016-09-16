@@ -1,0 +1,10 @@
+cf set-env womack-dataflow-server SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL https://api.local.pcfdev.io
+cf set-env womack-dataflow-server SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG pcfdev-org
+cf set-env womack-dataflow-server SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE pcfdev-space
+cf set-env womack-dataflow-server SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN local.pcfdev.io
+cf set-env womack-dataflow-server SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_STREAM_SERVICES my-mysql,my-rabbitmq,my-redis
+cf set-env womack-dataflow-server SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_USERNAME user
+cf set-env womack-dataflow-server SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_PASSWORD pass
+cf set-env womack-dataflow-server SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION true
+cf set-env womack-dataflow-server MAVEN_REMOTE_REPOSITORIES_REPO1_URL https://repo.spring.io/libs-release
+cf set-env womack-dataflow-server MAVEN_REMOTE_REPOSITORIES_REPO2_URL https://repo.spring.io/libs-snapshot

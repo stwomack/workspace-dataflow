@@ -1,0 +1,22 @@
+---
+applications:
+- name: womack-dataflow
+  host: womack-dataflow
+  memory: 2G
+  instances: 1
+  buildpack: java_buildpack_offline
+  path: spring-cloud-dataflow-server-cloudfoundry-1.0.0.BUILD-SNAPSHOT.jar
+  services:
+    - my-mysql
+    - my-rabbitmq
+  env:
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL: https://api.run.pez.pivotal.io
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG: pivot-swomack
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: development
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: cfapps.pez.pivotal.io
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_STREAM_SERVICES: my-mysql,my-rabbitmq,my-redis
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_USERNAME: nothign
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_PASSWORD: Footballs
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION: true
+    MAVEN_REMOTE_REPOSITORIES_REPO1_URL: https://repo.spring.io/libs-release
+    MAVEN_REMOTE_REPOSITORIES_REPO1_URL: https://repo.spring.io/libs-snapshot
