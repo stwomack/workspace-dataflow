@@ -7,4 +7,4 @@ ac-splitter=:http-in.splitter > aggregate-counter --name-expression=payload.stat
 
 dataflow:>stream deploy http-in --properties “app.http.producer.partitionKeyExpression=payload.status,app.redis-pubsub.count=4”
 
-jdbc.initialize
+app.jdbc.jdbc.initialize=true
